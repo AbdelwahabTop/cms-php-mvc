@@ -5,7 +5,7 @@ require __DIR__ . '/partials/_header.php';
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200 md:grid md:grid-cols-5 gap-4">
             <div class="col-span-1">
-                <div class="overflow-y-auto py-4 px-3 bg-gray-100 rounded dark:bg-gray-800">
+                <div class="overflow-y-auto py-4 px-3 bg-gray-100 rounded dark:bg-white-8000">
                     <ul class="space-y-2 left-menu">
                         <li>
                             <a class="w-full inline-flex" href="/">
@@ -60,8 +60,8 @@ require __DIR__ . '/partials/_header.php';
                     <a href="/posts/create" class="px-4 py-2 bg-yellow-600 rounded-sm text-white">Add Post</a>
                 </div>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <table class="w-full text-sm text-left text-white-500 dark:text-white-400">
+                        <thead class="text-xs text-black-700 uppercase bg-gray-100 dark:bg-white-700 dark:text-black-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Image</th>
                                 <th scope="col" class="px-6 py-3 w-60">Title</th>
@@ -71,7 +71,7 @@ require __DIR__ . '/partials/_header.php';
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <tr class="bg-white border-b dark:bg-white-800 dark:border-gray-700 hover:bg-gray-50 hover:text-white dark:hover:bg-gray-600">
                                 <td class="px-6 py-4">
                                     <img src="public/assets/thumbnails/800x400.png" alt="" class="w-16" />
                                 </td>
@@ -112,7 +112,7 @@ require __DIR__ . '/partials/_header.php';
                                 </td>
                             </tr>
 
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <tr class="bg-white border-b dark:bg-white-800 dark:border-gray-700 hover:bg-gray-50 hover:text-white dark:hover:bg-gray-600">
                                 <td class="px-6 py-4">
                                     <img src="public/assets/thumbnails/800x400.png" alt="" class="w-16" />
                                 </td>

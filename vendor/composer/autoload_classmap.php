@@ -6,8 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ComposerAutoloaderInit9de38bc982006f452cb725bcaaaeae1e' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInit9de38bc982006f452cb725bcaaaeae1e' => $vendorDir . '/composer/autoload_static.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Connection' => $baseDir . '/database/Connection.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/CreatePostsTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/CreateUsersTable.php',
+    'Router' => $baseDir . '/Router.php',
 );

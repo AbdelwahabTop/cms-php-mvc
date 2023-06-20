@@ -6,6 +6,8 @@ $pdo = Connection::make($config['database']);
 CreateUsersTable::usersTable($pdo);
 CreatePostsTable::postsTable($pdo);
 
-$router->define([
-    '' => "controllers/index.php"
-]);
+$router = new Router;
+
+require './routes.php';
+
+require $router->show('posts');
