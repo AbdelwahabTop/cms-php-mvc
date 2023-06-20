@@ -13,5 +13,6 @@ return array(
     'Connection' => $baseDir . '/database/Connection.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/CreatePostsTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/CreateUsersTable.php',
+    'Request' => $baseDir . '/Request.php',
     'Router' => $baseDir . '/Router.php',
 );
