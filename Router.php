@@ -34,9 +34,16 @@ class Router
     public function show($uri, $method)
     {
         if (array_key_exists($uri, $this->routes[$method])) {
-            return $this->routes[$method][$uri];
+            return $this->callMethod(...explode('@', $this->routes[$method][$uri]));
+            // return $this->routes[$method][$uri];
         }
 
         throw new Exception('Route not found.');
+    }
+
+    public function callMethod($controller, $action)
+    {
+        $cont = (new $controller);
+        return $cont->$action();
     }
 }
