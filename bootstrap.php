@@ -8,4 +8,4 @@ CreateUsersTable::usersTable($pdo);
 CreatePostsTable::postsTable($pdo);
 
 require Router::load('routes.php')
-    ->show(Request::uri());
+    ->show(Request::uri(), Request::method());
