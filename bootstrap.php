@@ -9,3 +9,8 @@ CreatePostsTable::postsTable($pdo);
 
 Router::load('routes.php')
     ->show(Request::uri(), Request::method());
+
+ function view($view, $data=null)
+{
+    require "views/{$view}.view.php";
+}

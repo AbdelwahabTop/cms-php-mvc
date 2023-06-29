@@ -7,11 +7,6 @@ class Router
         'POST' => []
     ];
 
-    // public function define(array $routes)
-    // {
-    //     $this->routes = $routes;
-    // }
-
     public function get($uri, $controller)
     {
         $this->routes['GET'][$uri] = $controller;
@@ -35,7 +30,6 @@ class Router
     {
         if (array_key_exists($uri, $this->routes[$method])) {
             return $this->callMethod(...explode('@', $this->routes[$method][$uri]));
-            // return $this->routes[$method][$uri];
         }
 
         throw new Exception('Route not found.');

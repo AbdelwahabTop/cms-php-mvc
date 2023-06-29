@@ -8,7 +8,7 @@ require __DIR__ . '/partials/_header.php';
                 <div class="overflow-y-auto py-4 px-3 bg-gray-100 rounded dark:bg-white-8000">
                     <ul class="space-y-2 left-menu">
                         <li>
-                            <a class="w-full inline-flex" href="/">
+                            <a class="w-full inline-flex" href="/cms-crud">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                                 </svg>
@@ -57,7 +57,7 @@ require __DIR__ . '/partials/_header.php';
             <div class="col-span-4">
                 <div class="flex justify-between mb-4">
                     <h3 class="mb-4 text-xl font-bold">Posts</h3>
-                    <a href="/posts/create" class="px-4 py-2 bg-yellow-600 rounded-sm text-white">Add Post</a>
+                    <a href="/cms-crud/posts/create" class="px-4 py-2 bg-yellow-600 rounded-sm text-white">Add Post</a>
                 </div>
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-white-500 dark:text-white-400">
@@ -83,7 +83,7 @@ require __DIR__ . '/partials/_header.php';
                                 </td>
                                 <td class="px-6 py-4">Published</td>
                                 <td class="px-6 py-4 flex">
-                                    <form action="/posts/edit" method="GET">
+                                    <form action="/cms-crud/posts/edit" method="GET">
                                         <input type="hidden" name="id" value="1" />
                                         <button type="submit">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-green-400 cursor-pointer">
@@ -92,7 +92,7 @@ require __DIR__ . '/partials/_header.php';
                                             </svg>
                                         </button>
                                     </form>
-                                    <form action="/posts/delete" method="POST" class="mx-4 cursor-pointer">
+                                    <form action="/cms-crud/posts/delete" method="POST" class="mx-4 cursor-pointer">
                                         <input type="hidden" name="id" value="1" />
                                         <button type="submit">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-red-400">
@@ -100,7 +100,7 @@ require __DIR__ . '/partials/_header.php';
                                             </svg>
                                         </button>
                                     </form>
-                                    <form action="/posts/view" method="GET">
+                                    <form action="cms-crud/posts/view" method="GET">
                                         <input type="hidden" name="id" value="1" />
                                         <button type="submit">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="h-5 w-5 text-blue-400 cursor-pointer">
