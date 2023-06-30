@@ -1,5 +1,9 @@
 <?php
 
+use App\App;
+use App\Router;
+use App\Request;
+
 App::bind('config', require "config.php");
 
 $pdo = Connection::make(App::get('config')['database']);

@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use Exception;
+
 class Router
 {
     protected array $routes = [
@@ -37,7 +41,9 @@ class Router
 
     public function callMethod($controller, $action)
     {
-        $cont = (new $controller);
+        $link = "App\\Controllers\\{$controller}";
+
+        $cont = (new $link);
         return $cont->$action();
     }
 }

@@ -6,7 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App' => $baseDir . '/App.php',
+    'App\\App' => $baseDir . '/app/App.php',
+    'App\\Controllers\\DashbordController' => $baseDir . '/app/controllers/DashbordController.php',
+    'App\\Request' => $baseDir . '/app/Request.php',
+    'App\\Router' => $baseDir . '/app/Router.php',
     'ComposerAutoloaderInit9de38bc982006f452cb725bcaaaeae1e' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit9de38bc982006f452cb725bcaaaeae1e' => $vendorDir . '/composer/autoload_static.php',
@@ -14,7 +17,4 @@ return array(
     'Connection' => $baseDir . '/database/Connection.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/CreatePostsTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/CreateUsersTable.php',
-    'DashbordController' => $baseDir . '/controllers/DashbordController.php',
-    'Request' => $baseDir . '/Request.php',
-    'Router' => $baseDir . '/Router.php',
 );

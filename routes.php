@@ -1,8 +1,5 @@
 <?php
 
-// $router->get('', 'controllers/index.php');
-// $router->get('posts', 'controllers/posts.php');
-
 $router->get('cms-crud', 'DashbordController@index');
 $router->get('cms-crud/posts', 'DashbordController@allPosts');
 $router->get('cms-crud/posts/create', 'DashbordController@create');
