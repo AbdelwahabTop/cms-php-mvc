@@ -14,6 +14,7 @@ class ComposerStaticInit9de38bc982006f452cb725bcaaaeae1e
         'App\\App' => __DIR__ . '/../..' . '/app/App.php',
         'App\\Controllers\\DashbordController' => __DIR__ . '/../..' . '/app/controllers/DashbordController.php',
         'App\\Controllers\\PostsController' => __DIR__ . '/../..' . '/app/controllers/PostsController.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Request' => __DIR__ . '/../..' . '/app/Request.php',
         'App\\Router' => __DIR__ . '/../..' . '/app/Router.php',
         'ComposerAutoloaderInit9de38bc982006f452cb725bcaaaeae1e' => __DIR__ . '/..' . '/composer/autoload_real.php',

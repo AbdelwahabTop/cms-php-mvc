@@ -20,7 +20,7 @@ require __DIR__ . '/partials/_header.php';
                                 <div class="w-full">
                                     <div id="message"></div>
                                     <!-- <form action="/posts/store" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data"> -->
-                                    <form id="myform" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data" action="">
+                                    <form action="/posts/store" id="myform" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data" action="">
                                         <div class="mb-4">
                                             <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                                                 Title
@@ -69,7 +69,7 @@ require __DIR__ . '/partials/_header.php';
         </div>
     </div>
 </main>
-<script src="../public/validation.js"></script>
+<script src="../public/assets/js/validation.js"></script>
 <?php
 require __DIR__ . '/partials/_footer.php';
 ?>

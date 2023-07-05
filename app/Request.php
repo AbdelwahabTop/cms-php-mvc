@@ -18,4 +18,9 @@ class Request
     {
         return $_REQUEST;
     }
+
+    public static function file()
+    {
+        return $_FILES;
+    }
 }

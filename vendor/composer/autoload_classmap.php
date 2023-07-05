@@ -9,6 +9,7 @@ return array(
     'App\\App' => $baseDir . '/app/App.php',
     'App\\Controllers\\DashbordController' => $baseDir . '/app/controllers/DashbordController.php',
     'App\\Controllers\\PostsController' => $baseDir . '/app/controllers/PostsController.php',
+    'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
     'App\\Request' => $baseDir . '/app/Request.php',
     'App\\Router' => $baseDir . '/app/Router.php',
     'ComposerAutoloaderInit9de38bc982006f452cb725bcaaaeae1e' => $vendorDir . '/composer/autoload_real.php',
