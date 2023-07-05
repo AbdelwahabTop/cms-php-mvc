@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class App
 {
     protected static $registry = [];

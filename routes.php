@@ -1,8 +1,10 @@
 <?php
 
-$router->get('cms-crud', 'DashbordController@index');
-$router->get('cms-crud/posts', 'DashbordController@allPosts');
-$router->get('cms-crud/posts/create', 'DashbordController@create');
-$router->get('cms-crud/posts/view', 'DashbordController@show');
-$router->get('cms-crud/posts/edit', 'DashbordController@edit');
-$router->post('cms-crud/posts/delete', 'DashbordController@delete');
+$router->get('', 'DashbordController@index');
+$router->get('posts', 'DashbordController@allPosts');
+$router->get('posts/create', 'DashbordController@create');
+$router->get('posts/view', 'DashbordController@show');
+$router->get('posts/edit', 'DashbordController@edit');
+$router->post('posts/delete', 'DashbordController@delete');
+
+$router->post('posts/store', 'PostsController@store');
