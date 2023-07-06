@@ -7,6 +7,13 @@ use App\Models\Post;
 
 class PostsController
 {
+    public function index()
+    {
+        $posts = (new Post)->allPost('posts');
+
+        return view("posts", ['posts' => $posts]);
+    }
+
     public static function store()
     {
         $img = Request::file()['thumbnail'];
