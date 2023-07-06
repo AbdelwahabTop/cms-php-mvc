@@ -14,35 +14,45 @@ require __DIR__ . '/partials/_header.php';
                 <div class="flex justify-between mb-4">
                     <h3 class="mb-4 text-xl font-bold">View Posts</h3>
                 </div>
-                <div>
-                    <div>
-                        <strong>Title:</strong>
-                        Mollitaia sadsadf
+
+                <div class="lg:flex items-center border-b pb-2">
+                    <div class="min-w-max">
+                        <h2 class="font-bold text-lg mr-4">TITLE:</h2>
                     </div>
-                    <br>
-                    <div>
-                        <strong>Slug:</strong>
-                        Mollitaia sadsadf
+                    <div class="w-3/5">
+                        <p><?= $post->title; ?></p>
                     </div>
-                    <br>
-                    <div>
-                        <strong>Body:</strong>
-                        Mollitaia sadsadf
+                </div>
+                <div class="lg:flex items-center border-b pb-2">
+                    <div class="min-w-max">
+                        <h2 class="font-bold text-lg mr-4">AUTHOR:</h2>
                     </div>
-                    <br>
-                    <div>
-                        <strong>Status:</strong>
-                        Mollitaia sadsadf
+                    <div class="w-3/5">
+                        <p><?= $post->slug; ?></p>
                     </div>
-                    <br>
-                    <div>
-                        <strong>Created:</strong>
-                        Mollitaia sadsadf
+                </div>
+                <div class="lg:flex items-center border-b pb-2">
+                    <div class="min-w-max">
+                        <h2 class="font-bold text-lg mr-4">BODY:</h2>
                     </div>
-                    <br>
-                    <div>
-                        <strong>Thumbnail:</strong>
-                        Mollitaia sadsadf
+                    <div class="w-3/5">
+                        <p><?= $post->body; ?></p>
+                    </div>
+                </div>
+                <div class="lg:flex items-center border-b pb-2">
+                    <div class="min-w-max">
+                        <h2 class="font-bold text-lg mr-4">STATUS:</h2>
+                    </div>
+                    <div class="w-3/5">
+                        <p><?= $post->isPublished; ?></p>
+                    </div>
+                </div>
+                <div class="lg:flex items-center border-b pb-2">
+                    <div class="min-w-max">
+                        <h2 class="font-bold text-lg mr-4">IMAGE:</h2>
+                    </div>
+                    <div class="w-3/5">
+                        <img src="<?= $post->thumbnail; ?>" alt="" class="w-16" />
                     </div>
                 </div>
             </div>

@@ -39,4 +39,13 @@ class Post
             die($th->getMessage());
         }
     }
+
+    public function showPost($table, $id)
+    {
+        $query = "SELECT * FROM {$table} WHERE id=?";
+
+        $stm = connect()->prepare($query);
+        $stm->execute([$id]);
+        return $stm->fetch(PDO::FETCH_OBJ);
+    }
 }

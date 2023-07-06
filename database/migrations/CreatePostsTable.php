@@ -9,7 +9,7 @@ class CreatePostsTable
             $query = "CREATE TABLE IF NOT EXISTS posts(
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 title VARCHAR(255) NOT NULL UNIQUE,
-                slug VARCHAR(255) NOT NULL ,
+                slug VARCHAR(255) NOT NULL,
                 body TEXT NOT NULL,
                 thumbnail VARCHAR(255),
                 isPublished VARCHAR(50) default 1,

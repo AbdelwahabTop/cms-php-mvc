@@ -27,4 +27,11 @@ class PostsController
 
         (new Post)->storePost($imgUrl, Request::values());
     }
+
+    public function show()
+    {
+        $post = (new Post)->showPost("posts", Request::values()['id']);
+
+        return view("show", ['post' => $post]);
+    }
 }
