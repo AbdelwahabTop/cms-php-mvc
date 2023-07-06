@@ -1,0 +1,40 @@
+.left-menu li a.active {
+    background-color: #ca8a04;
+    border-radius: 5px;
+    padding: 6px 3px;
+    color: #fff;
+}
+
+.extra-prod {
+    list-style: none;
+    margin: 20px 0 0 0;
+}
+
+.extra-prod li {
+    padding: 0 0 16px 0;
+}
+
+.extra-prod-title {
+    margin: 0 0 0 5px;
+    font-size: 13px;
+}
+
+.extra-prod li img {
+    max-width: 50px;
+}
+
+.extra-prod-price {
+    font-weight: bold;
+    margin: 6px 0 0 0;
+    display: block;
+}
+
+.get-me button {
+    border: 1px solid #ccc;
+    font-size: 13px;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: transparent;
+    font-style: italic;
+    margin: 4px 0 0 0;
+}

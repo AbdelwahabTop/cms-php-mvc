@@ -4,7 +4,8 @@ use App\App;
 use Database\Connection;
 
 if (!function_exists('dd')) {
-    function dd($data) {
+    function dd($data)
+    {
         echo '<pre>';
         die(var_dump($data));
         echo '</pre>';
@@ -24,5 +25,34 @@ if (!function_exists('view')) {
     function view($view, $data = null)
     {
         require "views/{$view}.view.php";
+    }
+}
+
+if (!function_exists('setSession')) {
+    function setSession($key, $text)
+    {
+        $_SESSION[$key] = $text;
+    }
+}
+
+if (!function_exists('startSession')) {
+    function startSession()
+    {
+        ob_start();
+        session_start();
+    }
+}
+
+if (!function_exists('getSession')) {
+    function getSession($name)
+    {
+        return $_SESSION[$name];
+    }
+}
+
+if (!function_exists('unsetSession')) {
+    function unsetSession($name)
+    {
+        unset($_SESSION[$name]);
     }
 }
