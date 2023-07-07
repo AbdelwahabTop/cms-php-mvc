@@ -44,7 +44,7 @@ require __DIR__ . '/partials/_header.php';
                         <h2 class="font-bold text-lg mr-4">STATUS:</h2>
                     </div>
                     <div class="w-3/5">
-                        <p><?= $post->isPublished; ?></p>
+                        <p><?= $post->isPublished ? 'yes' : 'no'; ?></p>
                     </div>
                 </div>
                 <div class="lg:flex items-center border-b pb-2">
@@ -52,7 +52,7 @@ require __DIR__ . '/partials/_header.php';
                         <h2 class="font-bold text-lg mr-4">IMAGE:</h2>
                     </div>
                     <div class="w-3/5">
-                        <img src="<?= $post->thumbnail; ?>" alt="" class="w-16" />
+                        <img src="<?= $post->isPublished ? 'Published' : 'Not Published'; ?>" alt="" class="w-16" />
                     </div>
                 </div>
             </div>

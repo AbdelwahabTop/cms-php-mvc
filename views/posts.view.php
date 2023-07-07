@@ -34,7 +34,7 @@ require __DIR__ . '/partials/_header.php';
                                     </td>
                                     <td class="px-6 py-4"><?php echo $post->title ?></td>
                                     <td class="px-6 py-4"><?php echo $post->slug ?></td>
-                                    <td class="px-6 py-4"><?php echo $post->isPublished ?></td>
+                                    <td class="px-6 py-4"><?php echo $post->isPublished ? 'Published' : 'Not Published' ?></td>
                                     <td class="px-6 py-4 flex">
                                         <form action="/posts/edit" method="GET">
                                             <input type="hidden" name="id" value="<?php echo $post->id ?>" />
