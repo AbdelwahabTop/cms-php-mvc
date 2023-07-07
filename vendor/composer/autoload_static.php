@@ -23,6 +23,7 @@ class ComposerStaticInit9de38bc982006f452cb725bcaaaeae1e
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/CreatePostsTable.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/CreateUsersTable.php',
+        'Dashbord' => __DIR__ . '/../..' . '/app/Models/Dashbord.php',
         'Database\\Connection' => __DIR__ . '/../..' . '/database/Connection.php',
     );
 

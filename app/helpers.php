@@ -60,3 +60,10 @@ if (!function_exists('unsetSession')) {
         unset($_SESSION[$name]);
     }
 }
+
+if (!function_exists('redirect')) {
+    function redirect($route)
+    {
+        header("Location: {$route}");
+    }
+}

@@ -32,9 +32,6 @@ class Post
         try {
             $stm = connect()->prepare($query);
             $stm->execute($data);
-
-            startSession();
-            setSession('success', 'Post added succesfully');
         } catch (\Throwable $th) {
             die($th->getMessage());
         }
@@ -47,5 +44,13 @@ class Post
         $stm = connect()->prepare($query);
         $stm->execute([$id]);
         return $stm->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function deletePost($table, $id)
+    {
+        $query = "DELETE FROM {$table} WHERE id=?";
+
+        $stm = connect()->prepare($query);
+        $stm->execute([$id]);
     }
 }

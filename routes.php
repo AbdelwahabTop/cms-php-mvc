@@ -11,3 +11,4 @@ $router->post('posts/delete', 'DashbordController@delete');
 $router->get('posts', 'PostsController@index');
 $router->post('posts/store', 'PostsController@store');
 $router->get('posts/view', 'PostsController@show');
+$router->post('posts/delete', 'PostsController@destroy');

@@ -18,5 +18,6 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/CreatePostsTable.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/CreateUsersTable.php',
+    'Dashbord' => $baseDir . '/app/Models/Dashbord.php',
     'Database\\Connection' => $baseDir . '/database/Connection.php',
 );

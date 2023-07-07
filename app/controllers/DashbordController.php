@@ -2,11 +2,15 @@
 
 namespace App\Controllers;
 
+use Dashbord;
+
 class DashbordController
 {
     public function index()
     {
-        return view("index");
+        $numOfPosts = (new Dashbord)->numOfPosts('posts');
+
+        return view("index", ['numOfPosts' => count($numOfPosts)]);
     }
 
     public function allPosts()
