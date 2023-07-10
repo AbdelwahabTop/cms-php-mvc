@@ -49,4 +49,38 @@ class PostsController
 
         redirect('/posts');
     }
+
+    public function edit()
+    {
+        $oldData = (new Post)->showPost("posts", Request::values()['id']);
+        // dd($oldData);
+        return view("edit", ['oldData' => $oldData]);
+    }
+
+    public function update()
+    {
+        $img = Request::file()['thumbnail'];
+        $filepath = $img['tmp_name'];
+        if (!$filepath) {
+            $imgUrl = Request::values()['oldThumnail'];
+            dd($imgUrl);
+        } else {
+            $imgName = strtolower(str_replace(' ', '-', $img['name']));
+
+            $imgUrl = 'public/assets/thumbnails/' . $imgName;
+
+            move_uploaded_file($filepath, $imgUrl);
+        }
+
+
+        // dd($imgName);
+        // dd($imgUrl);
+
+        (new Post)->updatePost('posts', Request::values()['id'], $imgUrl, Request::values());
+
+        startSession();
+        setSession('success', 'Post deleted succesfully');
+
+        redirect('/posts');
+    }
 }

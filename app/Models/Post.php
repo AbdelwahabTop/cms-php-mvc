@@ -53,4 +53,29 @@ class Post
         $stm = connect()->prepare($query);
         $stm->execute([$id]);
     }
+
+    public function updatePost($table, $id, $imgUrl, $data)
+    {
+        $data['thumbnail'] = $imgUrl;
+
+        $query = "UPDATE {$table} 
+                    SET title = ?,
+                        slug = ?,
+                        body = ?,
+                        thumbnail = ?,
+                        isPublished = ?,
+                        created_at = ?
+                    WHERE id = ?";
+
+        $stm = connect()->prepare($query);
+        $stm->bindValue(1, $data['title']);
+        $stm->bindValue(2, $data['slug']);
+        $stm->bindValue(3, $data['body']);
+        $stm->bindValue(4, $imgUrl);
+        $stm->bindValue(5, $data['isPublished']);
+        $stm->bindValue(6, $data['created_at']);
+        $stm->bindValue(7, $id);
+
+        $stm->execute();
+    }
 }

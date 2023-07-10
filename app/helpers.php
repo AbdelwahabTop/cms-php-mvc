@@ -7,7 +7,7 @@ if (!function_exists('dd')) {
     function dd($data)
     {
         echo '<pre>';
-        die(var_dump($data));
+        var_dump($data);
         echo '</pre>';
     }
 }
@@ -27,6 +27,7 @@ if (!function_exists('view')) {
         if ($data != null) {
             extract($data);
         }
+        // dd($data);
 
         require "views/{$view}.view.php";
     }

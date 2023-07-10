@@ -67,7 +67,7 @@ require __DIR__ . '/partials/_header.php';
     </div>
 </div>
 
-<script src="../public/assets/js/validation.js"></script>
+<script src="../public/assets/js/postValidation.js"></script>
 <?php
 require __DIR__ . '/partials/_footer.php';
 ?>
