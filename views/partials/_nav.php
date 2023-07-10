@@ -10,7 +10,7 @@
             </a>
         </li>
         <li>
-            <a class="<?php if ($_SERVER['REQUEST_URI'] === '/posts') echo 'active';
+            <a class="<?php if (strpos($_SERVER['REQUEST_URI'], '/posts') !== false) echo 'active';
                         ?> w-full inline-flex" href="/posts">
                 <svg class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
