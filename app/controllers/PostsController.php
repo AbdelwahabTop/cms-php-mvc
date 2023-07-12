@@ -27,8 +27,8 @@ class PostsController
 
         (new Post)->storePost($imgUrl, Request::values());
 
-        startSession();
-        setSession('success', 'Post added succesfully');
+        // startSession();
+        // setSession('success', 'Post added succesfully');
 
         redirect('/posts/create');
     }
@@ -44,8 +44,8 @@ class PostsController
     {
         $post = (new Post)->deletePost("posts", Request::values()['id']);
 
-        startSession();
-        setSession('success', 'Post deleted succesfully');
+        // startSession();
+        // setSession('success', 'Post deleted succesfully');
 
         redirect('/posts');
     }
@@ -72,14 +72,10 @@ class PostsController
             move_uploaded_file($filepath, $imgUrl);
         }
 
-
-        // dd($imgName);
-        // dd($imgUrl);
-
         (new Post)->updatePost('posts', Request::values()['id'], $imgUrl, Request::values());
 
-        startSession();
-        setSession('success', 'Post deleted succesfully');
+        // startSession();
+        // setSession('success', 'Post deleted succesfully');
 
         redirect('/posts');
     }
