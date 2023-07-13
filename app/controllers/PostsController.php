@@ -11,7 +11,6 @@ class PostsController
     public function index()
     {
         $posts = (new Post)->allPost('posts');
-        // echo $_SERVER['REQUEST_URI'];
         return view("posts", ['posts' => $posts]);
     }
 
@@ -44,8 +43,12 @@ class PostsController
     public function show()
     {
         $post = (new Post)->showPost("posts", Request::values()['id']);
+        $selectedCategories = (new Categories)->nameSelectedCategories(Request::values()['id']);
 
-        return view("show", ['post' => $post]);
+        return view("show", [
+            'post' => $post,
+            'selectedCategories' => $selectedCategories
+        ]);
     }
 
     public function destroy()
@@ -96,6 +99,6 @@ class PostsController
         // startSession();
         // setSession('success', 'Post deleted succesfully');
 
-        // redirect('/posts');
+        redirect('/posts');
     }
 }

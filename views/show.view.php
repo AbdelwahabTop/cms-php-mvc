@@ -41,15 +41,18 @@ require __DIR__ . '/partials/_header.php';
                 </div>
                 <div class="lg:flex items-center border-b pb-2">
                     <div class="min-w-max">
-                        <h2 class="font-bold text-lg mr-4">STATUS:</h2>
+                        <h2 class="font-bold text-lg mr-4">Categories:</h2>
                     </div>
                     <div class="w-3/5">
-                        <p><?= $post->isPublished ? 'yes' : 'no'; ?></p>
+                        <?php foreach ($selectedCategories as $category) : ?>
+                            <p><?= $category ?> </p>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="lg:flex items-center border-b pb-2">
                     <div class="min-w-max">
                         <h2 class="font-bold text-lg mr-4">IMAGE:</h2>
+                        <img src="<?= "../../" . $post->thumbnail ?>" class="mt-3" alt="" height="80" width="120" id="imgTag" />
                     </div>
                     <div class="w-3/5">
                         <img src="<?= $post->isPublished ? 'Published' : 'Not Published'; ?>" alt="" class="w-16" />

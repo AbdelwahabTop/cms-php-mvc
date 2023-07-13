@@ -7,7 +7,7 @@ $router->get('', 'DashbordController@index');
 // $router->get('posts/edit', 'DashbordController@edit');
 // $router->post('posts/delete', 'DashbordController@delete');
 $router->get('posts/create', 'CategoriesController@create');
-$router->get('posts/categories', 'CategoriesController@create');
+$router->get('categories', 'CategoriesController@showCategories');
 
 
 $router->get('posts', 'PostsController@index');

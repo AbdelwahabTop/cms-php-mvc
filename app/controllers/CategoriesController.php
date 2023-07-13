@@ -12,4 +12,12 @@ class CategoriesController
 
         return view("create", ['categories' => $categories]);
     }
+
+    public function showCategories()
+    {
+        $categories = (new Categories)->showAll('categories');
+        $numOfCategories = (new Categories)->numOfCategories('categories');
+
+        return view("categories", ['categories' => $categories, 'numOfCategories' => $numOfCategories]);
+    }
 }
