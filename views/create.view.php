@@ -2,16 +2,6 @@
 require __DIR__ . '/partials/_header.php';
 ?>
 
-<!-- <?php
-// $query = "SELECT * FROM categories";
-// $stm = connect()->prepare($query);
-// $stm->execute();
-// $categories = $stm->fetchAll(PDO::FETCH_OBJ);
-// // extract($categories);
-
-// dd($categories);
-?> -->
-
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200 md:grid md:grid-cols-5 gap-4">
@@ -29,7 +19,7 @@ require __DIR__ . '/partials/_header.php';
                         <div class="w-full">
                             <div id="message"></div>
                             <!-- <form action="/posts/store" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data"> -->
-                            <form id="myform" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
+                            <form action="/posts/store" id="myform" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" enctype="multipart/form-data">
                                 <div class="mb-4">
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                                         Title
@@ -61,7 +51,7 @@ require __DIR__ . '/partials/_header.php';
                                     <div class="grid grid-cols-2">
                                         <?php foreach ($categories as $category) : ?>
                                             <div class="mb-2">
-                                                <input class="pt-4" type="checkbox" name="<?= $category->name ?>" value="" id="<?= $category->id ?>">
+                                                <input class="pt-4" type="checkbox" name="categories[]" value="<?= $category->id ?>" id="<?= $category->name ?>">
                                                 <label class="" for="<?= $category->name ?>"><?= $category->name ?></label>
                                             </div>
                                         <?php endforeach; ?>
@@ -94,7 +84,7 @@ require __DIR__ . '/partials/_header.php';
     </div>
 </div>
 
-<script src="../public/assets/js/postValidation.js"></script>
+<!-- <script src="../public/assets/js/postValidation.js"></script> -->
 <?php
 require __DIR__ . '/partials/_footer.php';
 ?>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Categories;
 use App\Request;
 use App\Models\Post;
 
@@ -25,7 +26,14 @@ class PostsController
 
         move_uploaded_file($filepath, $imgUrl);
 
-        (new Post)->storePost($imgUrl, Request::values());
+        $data = Request::values();
+        $categoryIds = $data['categories'];
+        unset($data['categories']);
+
+        dd($data);
+        dd($categoryIds);
+
+        (new Post)->storePost($imgUrl, $data, $categoryIds);
 
         // startSession();
         // setSession('success', 'Post added succesfully');
@@ -53,8 +61,17 @@ class PostsController
     public function edit()
     {
         $oldData = (new Post)->showPost("posts", Request::values()['id']);
-        // dd($oldData);
-        return view("edit", ['oldData' => $oldData]);
+        $categories = (new Categories)->showAll("categories", Request::values()['id']);
+        $selectedCategories = (new Categories)->selectedCategories();
+        // dd($categories);
+        return view(
+            "edit",
+            [
+                'oldData' => $oldData,
+                'categories' => $categories,
+                'selectedCategories' => $selectedCategories
+            ]
+        );
     }
 
     public function update()

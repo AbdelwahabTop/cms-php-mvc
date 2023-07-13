@@ -2,6 +2,20 @@
 require __DIR__ . '/partials/_header.php';
 ?>
 
+<?php
+// $query = "SELECT categories.name FROM categories
+//     JOIN post_categories ON categories.id = post_categories.category_id
+//     JOIN posts ON post_categories.post_id = posts.id
+//     WHERE posts.id = 1;";
+
+// $stm = connect()->prepare($query);
+// $stm->execute();
+
+// dd($stm->fetchAll(PDO::FETCH_OBJ));
+// dd($selectedCategories);
+
+?>
+
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200 md:grid md:grid-cols-5 gap-4">
@@ -42,6 +56,15 @@ require __DIR__ . '/partials/_header.php';
                                     </label>
                                     <input value="<?= $oldData->body ?>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focuse:outline-none focuse:shadow-outline" id="body" name="body" type="text" placeholder="Body">
                                     <p id="body_err" class="text-red-500 text-sm italic error mt-2"></p>
+                                </div>
+
+                                <div class="grid grid-cols-2">
+                                    <?php foreach ($categories as $category) : ?>
+                                        <div class="mb-2">
+                                            <input class="pt-4" type="checkbox" name="categories[]" value="<?= $category->id ?>" id="<?= $category->name ?>" <?php if (in_array($category->id, $selectedCategories)) echo 'checked' ?>>
+                                            <label class="" for="<?= $category->name ?>"><?= $category->name ?></label>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
 
                                 <div class="mb-4">

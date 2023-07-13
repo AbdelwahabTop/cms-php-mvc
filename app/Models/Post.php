@@ -18,8 +18,10 @@ class Post
         }
     }
 
-    public function storePost($imgUrl, $data)
+    public function storePost($imgUrl, $data, $categoryIds)
     {
+        $conn = connect();
+
         $data['thumbnail'] = $imgUrl;
 
         $query = sprintf(
@@ -30,10 +32,20 @@ class Post
         );
 
         try {
-            $stm = connect()->prepare($query);
+            $stm = $conn->prepare($query);
             $stm->execute($data);
         } catch (\Throwable $th) {
             die($th->getMessage());
+        }
+
+        $postId = $conn->lastInsertId();
+
+        // Prepare the SQL statement for linking the post to categories in the "post_categories" table
+        $query = "INSERT INTO post_categories (post_id, category_id) VALUES (:post_id, :category_id)";
+        $stmt = $conn->prepare($query);
+
+        foreach ($categoryIds as $categoryId) {
+            $stmt->execute(['post_id' => $postId, 'category_id' => $categoryId]);
         }
     }
 
