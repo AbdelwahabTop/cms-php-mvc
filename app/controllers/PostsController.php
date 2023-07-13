@@ -62,7 +62,7 @@ class PostsController
     {
         $oldData = (new Post)->showPost("posts", Request::values()['id']);
         $categories = (new Categories)->showAll("categories", Request::values()['id']);
-        $selectedCategories = (new Categories)->selectedCategories();
+        $selectedCategories = (new Categories)->selectedCategories(Request::values()['id']);
         // dd($categories);
         return view(
             "edit",
@@ -89,11 +89,13 @@ class PostsController
             move_uploaded_file($filepath, $imgUrl);
         }
 
+        // dd(Request::values());
+
         (new Post)->updatePost('posts', Request::values()['id'], $imgUrl, Request::values());
 
         // startSession();
         // setSession('success', 'Post deleted succesfully');
 
-        redirect('/posts');
+        // redirect('/posts');
     }
 }

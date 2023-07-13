@@ -60,15 +60,24 @@ class Post
 
     public function deletePost($table, $id)
     {
-        $query = "DELETE FROM {$table} WHERE id=?";
+        $conn = connect();
 
-        $stm = connect()->prepare($query);
+        $query = "DELETE FROM post_categories WHERE post_id = $id";
+        $stm = $conn->prepare($query);
+        $stm->execute();
+
+        $postQuery = "DELETE FROM {$table} WHERE id=?";
+        $stm = $conn->prepare($postQuery);
         $stm->execute([$id]);
     }
 
-    public function updatePost($table, $id, $imgUrl, $data)
+    public function updatePost($table, $postId, $imgUrl, $data)
     {
+        $conn = connect();
+
         $data['thumbnail'] = $imgUrl;
+
+        $newCategoryIds = $data['categories'];
 
         $query = "UPDATE {$table} 
                     SET title = ?,
@@ -79,15 +88,26 @@ class Post
                         created_at = ?
                     WHERE id = ?";
 
-        $stm = connect()->prepare($query);
+        $stm = $conn->prepare($query);
         $stm->bindValue(1, $data['title']);
         $stm->bindValue(2, $data['slug']);
         $stm->bindValue(3, $data['body']);
         $stm->bindValue(4, $imgUrl);
         $stm->bindValue(5, $data['isPublished']);
         $stm->bindValue(6, $data['created_at']);
-        $stm->bindValue(7, $id);
+        $stm->bindValue(7, $postId);
 
         $stm->execute();
+
+        $query = "DELETE FROM post_categories WHERE post_id = $postId";
+        $stm = $conn->prepare($query);
+        $stm->execute();
+
+        $query = "INSERT INTO post_categories (post_id, category_id) VALUES (:post_id, :category_id)";
+        $stmt = $conn->prepare($query);
+
+        foreach ($newCategoryIds as $categoryId) {
+            $stmt->execute(['post_id' => $postId, 'category_id' => $categoryId]);
+        }
     }
 }

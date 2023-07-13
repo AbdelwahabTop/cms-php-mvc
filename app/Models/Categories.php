@@ -18,18 +18,16 @@ class Categories
         }
     }
 
-    public function selectedCategories()
+    public function selectedCategories($id)
     {
         $query = "SELECT post_categories.category_id FROM categories
             JOIN post_categories ON categories.id = post_categories.category_id
             JOIN posts ON post_categories.post_id = posts.id
-            WHERE posts.id = 148";
+            WHERE posts.id = ?";
 
         $stm = connect()->prepare($query);
-        $stm->execute();
-
-        // return array_column(array_merge(...$stm->fetchAll()), 'category_id');
-
+        $stm->execute([$id]);
+        
         return $stm->fetchAll(PDO::FETCH_COLUMN);
     }
 }
